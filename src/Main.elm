@@ -118,7 +118,7 @@ init _ =
             0
             0
             0
-            400
+            450
             "img/character.jpg"
         )
         PageBaseProperties
@@ -235,7 +235,7 @@ update msg model =
                                 socialTotal
 
                 skillListNew =
-                    if sumAndCurrentValue <= 400 then
+                    if sumAndCurrentValue <= 450 then
                         List.Extra.updateIf (\value3 -> value3.name == name) (\input -> { input | value = convertMaybeIntToInt value }) model.character.skillList
 
                     else
@@ -780,7 +780,8 @@ renderHeaderAndFooter page model =
                         [ img [ src "img/htbah.png" ] []
                         ]
                     , h2 [ class "subtitle" ]
-                        [ text "Characterbogen-Ersteller" ]
+                        [ text "Characterbogen-Ersteller"]
+                    , h5 [] [ text "(Fork von TheItCrOw - Werte sind für persönliche Zwecke angepasst)" ]
                     ]
                 ]
             ]
